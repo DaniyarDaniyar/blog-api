@@ -3,10 +3,13 @@
 import os
 import sys
 
+from settings.conf import ENV_POSSIBLE_OPTIONS, ENV_ID
+
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'BlogApi.settings')
+    assert ENV_ID in ENV_POSSIBLE_OPTIONS, f"Invalid ENV_ID: {ENV_ID}. Must be one of {ENV_POSSIBLE_OPTIONS}"
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'settings.env.{ENV_ID}')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
