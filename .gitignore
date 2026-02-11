@@ -34,7 +34,6 @@ share/python-wheels/
 .env/
 .venv/
 venv/
-ENV/
 env.bak/
 venv.bak/
 
@@ -68,7 +67,7 @@ staticfiles/                # если используете collectstatic в �
 
 # If you keep secrets in .env
 .env
-.env.*                      # другие env-файлы с секретами
+.env.*                     
 
 # Node / front-end
 node_modules/
